@@ -15,16 +15,49 @@ const addItem = (item) => {
   //using the push method and will accept the item variale
   basket.push(item);
   //using an if method to check if the item has a length greater than 0
-  if(item.length > 0){
+  if (item.length > 0) {
 
     // if item has greater than 0, we will return true
     return true;
+  }else {
+    return false;
   }
 };
 
 
 //i am conseling addItem and taking "milk" as an argument
-console.log(addItem("milk")); //out should true
+console.log(addItem("Milk")); //out should true
+
+
 
 //checking to see if the milk argument was pushed to basket array;
-console.log(basket)
+console.log(basket);
+
+
+//Create a function called listItem. it should:
+  //loop over the items in the basket array
+  //console.log each item on a new line
+
+//created listItem function that takes array as parameter
+  const listItem = (array) => {
+
+    //created variable called items
+    let items;
+
+    //using for loop to get the length of the array and return the elements within the array
+      for (let i = 0; i < array.length; i++){
+
+        // assigning items to the output of array[i]
+        items = array[i];
+        //login the items to console
+        console.log(items);
+      }
+
+      // finally, we are returning items
+      return items;
+  };
+
+//log listItem to console and pass basket as an argument
+  console.log(listItem(basket));// out should be Milk
+
+  
