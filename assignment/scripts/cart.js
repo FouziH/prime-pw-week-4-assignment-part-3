@@ -15,7 +15,7 @@ const addItem = (item) => {
   //using the push method and will accept the item variale
   basket.push(item);
   //using an if method to check if the item has a length greater than 0
-  if (item.length > 0) {
+  if (item.length >= 0 || item.length === undefined) {
 
     // if item has greater than 0, we will return true
     return true;
@@ -26,7 +26,15 @@ const addItem = (item) => {
 
 
 //i am conseling addItem and taking "milk" as an argument
-console.log(addItem("Milk")); //out should true
+addItem("Milk");
+
+//test  addItem
+
+
+console.log(`Basket is ${basket}`);
+console.log('Adding apples (expect true)', addItem('apples'));
+console.log(`Basket is now ${basket}`);
+
 
 
 
@@ -60,4 +68,23 @@ console.log(basket);
 //log listItem to console and pass basket as an argument
   console.log(listItem(basket));// out should be Milk
 
-  
+
+  //Create a function called empty array
+    //reset the basket to an empty array.
+
+  //Created a function called emptyArray
+
+  function emptyArray(){
+
+    //created veriable called items and set it equal to basket.splice
+    //basket.slice This will remove all elements from the array and will actually clean the original array.
+     let items = basket.splice(0, basket.length);
+
+     // returning items
+     return items;
+  }
+
+//envoking emptyArray which will clear the basket array to empty
+emptyArray();
+
+console.log(basket);
