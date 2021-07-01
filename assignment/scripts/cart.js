@@ -15,25 +15,28 @@ const addItem = (item) => {
   //using the push method and will accept the item variale
   basket.push(item);
   //using an if method to check if the item has a length greater than 0
-  if (item.length >= 0 || item.length === undefined) {
+  if ( item.length >= 0 ) {
 
     // if item has greater than 0, we will return true
-    return true;
-  }else {
-    return false;
-  }
+       return true;
+
+     }else {
+
+       // or return false
+      return false;
+   }
 };
 
 
 //i am conseling addItem and taking "milk" as an argument
-addItem("Milk");
+addItem("sport");
 
 //test  addItem
 
 
 console.log(`Basket is ${basket}`);
 console.log('Adding apples (expect true)', addItem('apples'));
-console.log(`Basket is now ${basket}`);
+console.log(`Basket is now ${basket}.`);
 
 
 
@@ -87,4 +90,5 @@ console.log(basket);
 //envoking emptyArray which will clear the basket array to empty
 emptyArray();
 
+//log basket to console to see if the array is reset to empty
 console.log(basket);
