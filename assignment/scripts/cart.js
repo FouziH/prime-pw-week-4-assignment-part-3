@@ -2,40 +2,47 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
+//.1 Add a global const named maxItems and set it to 5;
 
+const maxItems = 5;
 //create a global variable and set i to an empty array.
 
 
 //declared a variable named basket and set it to an empty array
 let basket = [];
 
+
+
+
 //created a function called addItem that takes item as a parameter
 const addItem = item => {
 
+  if ( !isFull() ){
+
+        basket.push( item );
+
+  }
+
   //using the push method and will accept the item variale
-  basket.push ( item );
+
+
   //using an if method to check if the item has a length greater than 0
-  if ( item.length > 0 ) {
 
-    // if item has greater than 0, we will return true
-       return true;
-
-     } else {
 
        // or return false
       return false;
-   }
 };
 
 
 //i am conseling addItem and taking "milk" as an argument
-addItem ( "sport" );
+addItem ("orange") ;
 
 //test  addItem
 
 
 console.log(`Basket is ${basket}`);
 console.log('Adding apples (expect true)', addItem('apples'));
+
 console.log(`Basket is now ${basket}.`);
 
 
@@ -101,21 +108,27 @@ console.log ( basket );
 
 //using functions in other function
 
-//.1 Add a global const named maxItems and set it to 5;
-
-const maxItems = 5;
-
 
 //2. Create a function  called isFull(). it should:
-  //return false is the nasket contains less than max number of items
+  //return false is the basket contains less than max number of items
   //return true otherwise (equal or more than maxItems)
 
-  
-//3. Update the required addItem function to:
-  //Use the isFull function to prevent more than maxItems from being added to the basket.
-  //If an item was added to the array, return true
-  //If there was no room and the item could not be added return false
-  //Using Array built-in functions!
+  //3. Update the required addItem function to:
+    //Use the isFull function to prevent more than maxItems from being added to the basket.
+    //If an item was added to the array, return true
+    //If there was no room and the item could not be added return false
+    //Using Array built-in functions!
+  function isFull () {
+
+      if ( basket.length < maxItems ) {
+        return false;
+      }
+
+      else if(basket.length >=  maxItems){
+
+        return true;
+      }
+  }
 
 //4. Create a function called removeItem. It should:
   //Take an input parameter for a string item
