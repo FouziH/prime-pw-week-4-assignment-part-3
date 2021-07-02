@@ -10,17 +10,17 @@ console.log('***** Cart Functions *****');
 let basket = [];
 
 //created a function called addItem that takes item as a parameter
-const addItem = (item) => {
+const addItem = item => {
 
   //using the push method and will accept the item variale
-  basket.push(item);
+  basket.push ( item );
   //using an if method to check if the item has a length greater than 0
   if ( item.length > 0 ) {
 
     // if item has greater than 0, we will return true
        return true;
 
-     }else {
+     } else {
 
        // or return false
       return false;
@@ -29,7 +29,7 @@ const addItem = (item) => {
 
 
 //i am conseling addItem and taking "milk" as an argument
-addItem("sport");
+addItem ( "sport" );
 
 //test  addItem
 
@@ -42,7 +42,7 @@ console.log(`Basket is now ${basket}.`);
 
 
 //checking to see if the milk argument was pushed to basket array;
-console.log(basket);
+console.log ( basket );
 
 
 //Create a function called listItem. it should:
@@ -50,7 +50,7 @@ console.log(basket);
   //console.log each item on a new line
 
 //created listItem function that takes array as parameter
-  const listItem = (array) => {
+  const listItem = array => {
 
     //created variable called items
     let items;
@@ -61,7 +61,7 @@ console.log(basket);
         // assigning items to the output of array[i]
         items = array[i];
         //login the items to console
-        console.log(items);
+        console.log ( items );
       }
 
       // finally, we are returning items
@@ -69,7 +69,7 @@ console.log(basket);
   };
 
 //log listItem to console and pass basket as an argument
-  console.log(listItem(basket));// out should be Milk
+  console.log ( listItem ( basket ) );// out should be Milk
 
 
   //Create a function called empty array
@@ -81,7 +81,7 @@ console.log(basket);
 
     //created veriable called items and set it equal to basket.splice
     //basket.slice This will remove all elements from the array and will actually clean the original array.
-     let items = basket.splice(0, basket.length);
+     let items = basket.splice( 0, basket.length );
 
      // returning items
      return items;
@@ -91,7 +91,7 @@ console.log(basket);
 emptyArray();
 
 //log basket to console to see if the array is reset to empty
-console.log(basket);
+console.log ( basket );
 
 
 
@@ -109,6 +109,8 @@ const maxItems = 5;
 //2. Create a function  called isFull(). it should:
   //return false is the nasket contains less than max number of items
   //return true otherwise (equal or more than maxItems)
+
+  
 //3. Update the required addItem function to:
   //Use the isFull function to prevent more than maxItems from being added to the basket.
   //If an item was added to the array, return true
