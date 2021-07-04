@@ -11,42 +11,30 @@ const maxItems = 5;
 //declared a variable named basket and set it to an empty array
 let basket = [];
 
-
-
-
 //created a function called addItem that takes item as a parameter
 const addItem = item => {
 
+  // if
   if ( !isFull() ){
 
         basket.push( item );
 
   }
-
-  //using the push method and will accept the item variale
-
-
-  //using an if method to check if the item has a length greater than 0
-
-
        // or return false
       return false;
 };
 
-
-//i am conseling addItem and taking "milk" as an argument
-addItem ("orange") ;
-
-//test  addItem
-
-
+/*----Testing  to see if the functions created are working correctly -----*/
 console.log(`Basket is ${basket}`);
-console.log('Adding apples (expect true)', addItem('apples'));
 
+//adding more items to the basket
+console.log('Adding apples (expect true)', addItem('apple'));
+console.log('Adding apples (expect true)', addItem('Orange'));
+console.log('Adding apples (expect true)', addItem('Mango'));
+console.log('Adding apples (expect true)', addItem('Grapes'));
+console.log('Adding apples (expect true)', addItem('Apple fruit'));
+console.log('Adding apples (expect true)', addItem('Peanuts'));
 console.log(`Basket is now ${basket}.`);
-
-
-
 
 //checking to see if the milk argument was pushed to basket array;
 console.log ( basket );
@@ -63,7 +51,7 @@ console.log ( basket );
     let items;
 
     //using for loop to get the length of the array and return the elements within the array
-      for (let i = 0; i < array.length; i++){
+      for ( let i = 0; i < array.length; i++ ) {
 
         // assigning items to the output of array[i]
         items = array[i];
@@ -97,10 +85,8 @@ console.log ( basket );
 //envoking emptyArray which will clear the basket array to empty
 emptyArray();
 
-//log basket to console to see if the array is reset to empty
-console.log ( basket );
-
-
+ //basket to console to see if the array is reset to empty;
+ console.log ( basket );
 
 /*Stretch Goals*/
 
@@ -124,7 +110,7 @@ console.log ( basket );
         return false;
       }
 
-      else if(basket.length >=  maxItems){
+      else if ( basket.length >=  maxItems ) {
 
         return true;
       }
@@ -135,3 +121,9 @@ console.log ( basket );
   //Use Array.indexOf to find the index of the first matching item in the basket.
   //Use Array.splice to remove the first matching item from the basket.
   //Return the item removed or null if the item was not found
+  function removedItem ( input ) {
+
+
+
+
+}
