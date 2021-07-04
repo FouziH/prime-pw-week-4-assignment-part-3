@@ -5,8 +5,6 @@ console.log('***** Cart Functions *****');
 //.1 Add a global const named maxItems and set it to 5;
 
 const maxItems = 5;
-//create a global variable and set i to an empty array.
-
 
 //declared a variable named basket and set it to an empty array
 let basket = [];
@@ -14,9 +12,10 @@ let basket = [];
 //created a function called addItem that takes item as a parameter
 const addItem = item => {
 
-  // if
+  // if my isFull function is less than the maxItems variable
   if ( !isFull() ){
 
+      //push item to the basket
         basket.push( item );
 
   }
@@ -71,9 +70,7 @@ console.log ( basket );
     //reset the basket to an empty array.
 
   //Created a function called emptyArray
-
   function emptyArray(){
-
     //created veriable called items and set it equal to basket.splice
     //basket.slice This will remove all elements from the array and will actually clean the original array.
      let items = basket.splice( 0, basket.length );
@@ -83,10 +80,10 @@ console.log ( basket );
   }
 
 //envoking emptyArray which will clear the basket array to empty
-emptyArray();
+//emptyArray();
 
  //basket to console to see if the array is reset to empty;
- console.log ( basket );
+ //console.log ( basket );
 
 /*Stretch Goals*/
 
@@ -121,9 +118,25 @@ emptyArray();
   //Use Array.indexOf to find the index of the first matching item in the basket.
   //Use Array.splice to remove the first matching item from the basket.
   //Return the item removed or null if the item was not found
-  function removedItem ( input ) {
+  function removedString ( string ) {
 
+    //declared index and set it equal to basket.index Of and pass string
+    let index = basket.indexOf(string);
 
+    // index is greater than -1 (indexOf will give -1 if the string doesnt match elements within the basket)
 
+    if ( index > -1 ) {
+
+      let removedItem = basket.splice(index, 1);
+
+      return removedItem;
+    }
+    return null;
 
 }
+
+
+//Testing removedString function
+console.log(basket)
+console.log(removedString("Mango"))
+console.log(basket[2]);
